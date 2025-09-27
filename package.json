@@ -1,0 +1,29 @@
+{
+  "name": "11ty-base-template",
+  "version": "1.0.0",
+  "description": "A modern base template built with Eleventy and ES modules",
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && ELEVENTY_ENV=production eleventy",
+    "serve": "npm run clean && ELEVENTY_ENV=production eleventy --serve",
+    "start": "npm run clean && ELEVENTY_ENV=development eleventy --serve",
+    "dev": "npm run clean && ELEVENTY_ENV=development eleventy --serve --watch"
+  },
+  "keywords": [
+    "eleventy",
+    "blog",
+    "static-site",
+    "es-modules"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.2",
+    "build-hasher": "0.0.2",
+    "dotenv": "17.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
