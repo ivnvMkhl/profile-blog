@@ -1,0 +1,8 @@
+{% macro tag(label, color, size) %}
+<span class="tag tag--{{ color }} tag--{{ size }}">
+    <span class="tag-marker"></span>
+    <span class="tag-label">{{ label }}</span>
+</span>
+{% endmacro %}
+
+

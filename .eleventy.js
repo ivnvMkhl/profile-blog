@@ -1,5 +1,6 @@
 import { hashAssets, updateHashedLinks } from "build-hasher";
 import dotenv from 'dotenv';
+import { lectures, articles, projects, counterChart } from './objects.js';
 
 dotenv.config();
 
@@ -13,6 +14,11 @@ export default function(eleventyConfig) {
   });
 
   eleventyConfig.addGlobalData("baseUrl", process.env.ELEVENTY_ENV === 'development' ? '' : process.env.BASE_URL);  
+
+  eleventyConfig.addGlobalData("lectures", lectures);
+  eleventyConfig.addGlobalData("articles", articles);
+  eleventyConfig.addGlobalData("projects", projects);
+  eleventyConfig.addGlobalData("counterChart", counterChart);
 
   eleventyConfig.on('afterBuild', async ({ runMode, outputMode, dir }) => {
     console.log('🚀 Starting post-build processing...');

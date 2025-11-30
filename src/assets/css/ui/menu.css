@@ -1,0 +1,131 @@
+.menu-wrapper {
+    display: grid;
+    width: 100%;
+    height: 94px;
+    min-height: 94px;
+    background-color: var(--color-bg-base);
+    border-bottom: 1px solid var(--color-border-secondary);
+    padding: 0 var(--fui-padding-3xl);
+    align-items: center;
+    grid-template-columns: 160px 1fr auto;
+    gap: var(--fui-space-l);
+    letter-spacing: 0.01em;
+}
+
+.menu-logo {
+    justify-self: start;
+}
+
+.menu-links {
+    justify-self: center;
+}
+
+.theme-button {
+    justify-self: end;
+}
+
+
+.menu-links {
+    display: flex;
+    gap: var(--fui-space-s);
+    align-items: center;
+    width: 100%;
+}
+
+.menu-button {
+    display: flex;
+    background-color: var(--color-bg-base);
+    border: 1px solid var(--color-border-secondary);
+    padding: var(--fui-padding-m) var(--fui-padding-xl);
+    border-radius: var(--fui-border-radius-m);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    align-items: center;
+    gap: var(--fui-space-s);
+    font-size: var(--font-size-l);
+    line-height: var(--font-size-l);
+}
+
+.menu-logo {
+    font-size: var(--heading-size-h3);
+    line-height: var(--heading-size-h3);
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-text-primary);
+}
+
+.menu-logo:hover {
+    text-decoration: none;
+}
+
+.menu-logo:active {
+    text-decoration: none;
+}
+
+.menu-logo:visited {
+    text-decoration: none;
+}
+
+.menu-button:hover {
+    border: 1px solid var(--color-border-secondary-hover);
+    text-decoration: none;
+}
+
+.menu-button:active {
+    border: 1px solid var(--color-border-secondary-hover);
+    text-decoration: none;
+}
+
+.menu-button-icon {
+    width: var(--fui-icon-m);
+    height: var(--fui-icon-m);
+    /* Цвет наследуется от родителя через currentColor в SVG */
+    color: inherit;
+    flex-shrink: 0;
+    /* Анимация поворота */
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.menu-button:hover .menu-button-icon {
+    transform: rotate(90deg);
+}
+
+.menu-button:active .menu-button-icon {
+    transition: none;
+    transform: rotate(90deg);
+}
+
+.menu-button.active .menu-button-icon {
+    transform: rotate(90deg);
+}
+
+.menu-button.active {
+    border: 1px solid var(--color-border-secondary-hover);
+}
+
+.theme-button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid var(--color-border-secondary);
+    background-color: var(--color-bg-base);
+}
+
+.theme-button:hover {
+    border-color: var(--color-border-secondary-hover);
+}
+
+.theme-button:active {
+    border-color: var(--color-border-secondary-hover);
+    background-color: var(--color-bg-secondary);
+}
+
+.theme-button-icon {
+    width: var(--fui-icon-m);
+    height: var(--fui-icon-m);
+    color: inherit;
+    flex-shrink: 0;
+}

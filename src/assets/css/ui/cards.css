@@ -1,0 +1,99 @@
+/* Общие стили для карточек */
+.card {
+    width: 100%;
+    height: 320px;
+    border: 1px solid var(--color-border-secondary);
+    padding: var(--fui-padding-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--fui-space-m);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.card:hover {
+    border-color: var(--color-border-secondary-hover);
+    text-decoration: none;
+}
+
+.card:active {
+    border-color: var(--color-border-secondary-hover);
+    text-decoration: none;
+}
+
+.card:visited {
+    text-decoration: none;
+}
+
+.card-title {
+    font-size: var(--heading-size-h3);
+    line-height: var(--heading-size-h3);
+    font-weight: 400;
+    margin: 0;
+    color: var(--color-text-primary);
+    text-decoration: none;
+
+}
+
+.card:hover .card-title {
+    color: var(--color-text-secondary-hover);
+    text-decoration: underline;
+}
+
+.card-description {
+    font-size: var(--font-size-l);
+    line-height: 125%;
+    color: var(--color-text-secondary);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    line-clamp: 6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--fui-space-m);
+    margin-bottom: var(--fui-space-l);
+}
+
+.card-icon {
+    position: absolute;
+    right: var(--fui-padding-xl);
+    bottom: var(--fui-padding-xl);
+    width: var(--fui-icon-l);
+    height: var(--fui-icon-l);
+    color: var(--color-text-primary);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.card:hover .card-icon {
+    transform: rotate(90deg);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+    gap: 0;
+}
+
+@media (max-width: 1024px) {
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+

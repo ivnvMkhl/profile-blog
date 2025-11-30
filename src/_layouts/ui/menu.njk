@@ -1,0 +1,93 @@
+{% from "./menu-button.njk" import menuButton %}
+        <nav class="menu-wrapper">
+            <a class="menu-logo" href="/">_iMkhl</a>
+
+            <div class="menu-links">
+                {% for key, item in counterChart %}
+                {{ menuButton(item.name, "/" + key) if item.value >= 1 }}
+                {% endfor %}
+            </div>
+
+            <script>
+                (function() {
+                    // Получаем текущий путь
+                    const currentPath = window.location.pathname;
+                    
+                    // Находим все кнопки меню
+                    const menuButtons = document.querySelectorAll('.menu-button');
+                    
+                    // Проверяем каждую кнопку и добавляем класс active, если путь совпадает
+                    menuButtons.forEach(button => {
+                        const buttonHref = button.getAttribute('href');
+                        
+                        // Проверяем точное совпадение или если текущий путь начинается с пути кнопки
+                        if (currentPath === buttonHref || 
+                            (buttonHref !== '/' && currentPath.startsWith(buttonHref))) {
+                            button.classList.add('active');
+                        }
+                    });
+                })();
+            </script>
+
+            <button class="menu-button theme-button" id="theme-button" type="button" aria-label="Переключить тему">
+                <svg class="theme-button-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M16.9497 7.05025C18.2625 8.36301 19 10.1435 19 12C19 13.8565 18.2625 15.637 16.9497 16.9497C15.637 18.2625 13.8565 19 12 19V5C13.8565 5 15.637 5.7375 16.9497 7.05025Z" fill="currentColor"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.514 17.514 22 12 22C6.486 22 2 17.514 2 12C2 6.486 6.486 2 12 2C17.514 2 22 6.486 22 12ZM20 12C20 7.589 16.411 4 12 4C7.589 4 4 7.589 4 12C4 16.411 7.589 20 12 20C16.411 20 20 16.411 20 12Z" fill="currentColor"/>
+                </svg>
+            </button>
+
+            <script>
+                (function() {
+                    const themeButton = document.getElementById('theme-button');
+                    const body = document.body;
+                    const THEME_STORAGE_KEY = 'theme-preference';
+                    
+                    // Получаем сохраненную тему или используем системную
+                    function getInitialTheme() {
+                        const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+                        if (savedTheme) {
+                            return savedTheme;
+                        }
+                        // Проверяем системную тему
+                        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                            return 'dark';
+                        }
+                        return 'light';
+                    }
+                    
+                    // Устанавливаем тему
+                    function setTheme(theme) {
+                        if (theme === 'dark') {
+                            body.setAttribute('data-theme', 'dark');
+                        } else {
+                            body.removeAttribute('data-theme');
+                        }
+                        localStorage.setItem(THEME_STORAGE_KEY, theme);
+                    }
+                    
+                    // Переключаем тему
+                    function toggleTheme() {
+                        const currentTheme = body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+                        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                        setTheme(newTheme);
+                    }
+                    
+                    // Инициализация темы при загрузке
+                    const initialTheme = getInitialTheme();
+                    setTheme(initialTheme);
+                    
+                    // Обработчик клика на кнопку
+                    themeButton.addEventListener('click', toggleTheme);
+                    
+                    // Слушаем изменения системной темы (опционально)
+                    if (window.matchMedia) {
+                        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                            // Обновляем тему только если пользователь не сохранил свой выбор
+                            if (!localStorage.getItem(THEME_STORAGE_KEY)) {
+                                setTheme(e.matches ? 'dark' : 'light');
+                            }
+                        });
+                    }
+                })();
+            </script>
+        </nav>

@@ -1,0 +1,10 @@
+---
+layout: base.njk
+title: Проекты
+---
+
+{% from "./_layouts/ui/cards.njk" import cardsGrid %}
+
+<h1>Проекты</h1>
+
+{{ cardsGrid(projects) }}

@@ -3,3 +3,8 @@
 *::after {
   box-sizing: border-box;
 }
+
+.base-wrapper {
+  padding: var(--fui-padding-xl) var(--fui-padding-3xl);
+  height: 100%;
+}
