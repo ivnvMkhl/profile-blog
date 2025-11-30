@@ -1,4 +1,4 @@
-{% macro lectureTemplate(lecture) %}
+{% macro lectureTemplate(lecture, baseUrl) %}
 {% from "./ui/tag.njk" import tag %}
 <link rel="stylesheet" href="{{ baseUrl }}/assets/css/lecture.css">
 <h1>{{ lecture.name }}</h1>

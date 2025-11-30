@@ -3,4 +3,4 @@ layout: base.njk
 title: "ООП и описание реальности"
 ---
 {% from "../_layouts/lecture.njk" import lectureTemplate %}
-{{ lectureTemplate(lectures[page.fileSlug]) }}
+{{ lectureTemplate(lectures[page.fileSlug], baseUrl) }}
