@@ -3,7 +3,7 @@
 {% macro cardsGrid(items) %}
 <div class="cards-grid">
     {% for key, item in items %}
-    <a class="card" href="{{ item.href }}">
+    <a class="card" href="{{ baseUrl }}{{ item.href }}">
         <div class="card-tags">
             {% for tagItem in item.tags %}
             {{ tag(tagItem.label, tagItem.color, "m") }}
