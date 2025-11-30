@@ -4,7 +4,7 @@
 
             <div class="menu-links">
                 {% for key, item in counterChart %}
-                {{ menuButton(item.name, "/" + key) if item.value >= 1 }}
+                {{ menuButton(item.name, baseUrl + "/" + key) if item.value >= 1 }}
                 {% endfor %}
             </div>
 
