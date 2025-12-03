@@ -4,8 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }}</title>
+    <meta name="description" content="{{ description or 'Личный блог о веб-разработке, JavaScript, TypeScript и создании интерфейсов. Лекции, статьи и проекты.' }}" />
+    <meta name="author" content="Михаил Иванов" />
+    <meta name="theme-color" content="#111111" />
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{{ baseUrl }}/assets/images/favicon.svg" />
     <link rel="alternate icon" href="{{ baseUrl }}/assets/images/favicon.svg" type="image/svg+xml" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="{{ ogType or 'website' }}" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ description or 'Личный блог о веб-разработке, JavaScript, TypeScript и создании интерфейсов. Лекции, статьи и проекты.' }}" />
+    <meta property="og:image" content="{{ ogImage or baseUrl + '/assets/images/avatar.jpg' }}" />
+    <meta property="og:url" content="{{ baseUrl }}{{ page.url }}" />
+    <meta property="og:site_name" content="iMkhl" />
+    <meta property="og:locale" content="ru_RU" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ title }}" />
+    <meta name="twitter:description" content="{{ description or 'Личный блог о веб-разработке, JavaScript, TypeScript и создании интерфейсов. Лекции, статьи и проекты.' }}" />
+    <meta name="twitter:image" content="{{ ogImage or baseUrl + '/assets/images/avatar.jpg' }}" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ baseUrl }}{{ page.url }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
