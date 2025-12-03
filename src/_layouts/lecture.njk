@@ -1,16 +1,22 @@
 {% macro lectureTemplate(lecture, baseUrl) %}
-{% from "./ui/tag.njk" import tag %}
-<link rel="stylesheet" href="{{ baseUrl }}/assets/css/lecture.css">
-<h1>{{ lecture.name }}</h1>
-<div class="lecture-wrapper">
-    <iframe src="{{ lecture.video }}" class="lecture-video" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+  {% from "./ui/tag.njk" import tag %}
+  <link rel="stylesheet" href="{{ baseUrl }}/assets/css/lecture.css" />
+  <h1>{{ lecture.name }}</h1>
+  <div class="lecture-wrapper">
+    <iframe
+      src="{{ lecture.video }}"
+      class="lecture-video"
+      allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
     <div class="lecture-description">
-        <div class="lecture-tags">
-            {% for tagItem in lecture.tags %}
-                {{ tag(tagItem.label, tagItem.color, "l") }}
-            {% endfor %}
-        </div>
-        <p class="lecture-description-text">{{ lecture.description }}</p>
+      <div class="lecture-tags">
+        {% for tagItem in lecture.tags %}
+          {{ tag(tagItem.label, tagItem.color, "l") }}
+        {% endfor %}
+      </div>
+      <p class="lecture-description-text">{{ lecture.description }}</p>
     </div>
-</div>
+  </div>
 {% endmacro %}

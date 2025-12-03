@@ -1,11 +1,11 @@
 .article-content {
-    max-width: 700px;
-    text-wrap: pretty;
-    padding-bottom: var(--fui-space-2xl);
+  max-width: 700px;
+  text-wrap: pretty;
+  padding-bottom: var(--fui-space-2xl);
 }
 
 @media (max-width: 768px) {
-    .article-content {
-        max-width: 100%;
-    }
+  .article-content {
+    max-width: 100%;
+  }
 }

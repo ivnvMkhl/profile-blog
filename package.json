@@ -5,10 +5,15 @@
   "type": "module",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && ELEVENTY_ENV=production eleventy",
+    "build": "npm run clean && ELEVENTY_ENV=production eleventy && npm run format:dist",
     "serve": "npm run clean && ELEVENTY_ENV=production eleventy --serve",
     "start": "npm run clean && ELEVENTY_ENV=development eleventy --serve",
-    "dev": "npm run clean && ELEVENTY_ENV=development eleventy --serve --watch"
+    "dev": "npm run clean && ELEVENTY_ENV=development eleventy --serve --watch",
+    "format:src": "prettier --write \"src/**/*.{js,json,njk,md,css}\" \"*.js\"",
+    "format:dist": "prettier --write --ignore-path /dev/null \"dist/**/*.{html,css,js}\"",
+    "format": "npm run format:src",
+    "format:all": "npm run format:src && npm run format:dist",
+    "format:check": "prettier --check \"src/**/*.{js,json,njk,md,css}\" \"*.js\""
   },
   "keywords": [
     "eleventy",
@@ -21,7 +26,9 @@
   "devDependencies": {
     "@11ty/eleventy": "3.1.2",
     "build-hasher": "0.0.2",
-    "dotenv": "17.2.2"
+    "dotenv": "17.2.2",
+    "prettier": "3.7.4",
+    "prettier-plugin-jinja-template": "^2.1.0"
   },
   "engines": {
     "node": ">=18.0.0"

@@ -1,7 +1,21 @@
 {% macro menuButton(title, url) %}
-<a class="menu-button" href="{{ url }}">
+  <a class="menu-button" href="{{ url }}">
     <span>{{ title }}</span>
-    <svg class="menu-button-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4289 6.84315L5.52944 6.84315L5.52944 4.84315H17.8431V17.1569L15.8431 17.1569L15.8431 8.25736L5.52944 18.5711L4.11522 17.1569L14.4289 6.84315Z" fill="currentColor"/>
+    <svg
+      class="menu-button-icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M14.4289 6.84315L5.52944 6.84315L5.52944 4.84315H17.8431V17.1569L15.8431 17.1569L15.8431 8.25736L5.52944 18.5711L4.11522 17.1569L14.4289 6.84315Z"
+        fill="currentColor"
+      />
     </svg>
-</a>{% endmacro %}
+  </a>
+{% endmacro %}

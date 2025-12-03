@@ -1,0 +1,12 @@
+# Dependencies
+node_modules
+
+# Explicitly allow dist to be formatted
+!dist
+
+# Other
+.git
+.DS_Store
+*.log
+
+

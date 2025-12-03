@@ -1,77 +1,76 @@
 /* Стили для тега с маркером */
 .tag {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--fui-space-s);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--fui-space-s);
 }
 
 .tag-marker {
-    width: var(--fui-badge-size-m);
-    height: var(--fui-badge-size-m);
-    border-radius: 50%;
-    flex-shrink: 0;
+  width: var(--fui-badge-size-m);
+  height: var(--fui-badge-size-m);
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .tag-label {
-    font-size: var(--font-size-m);
-    line-height: var(--font-size-m);
-    font-weight: 400;
-    color: var(--color-text-secondary);
+  font-size: var(--font-size-m);
+  line-height: var(--font-size-m);
+  font-weight: 400;
+  color: var(--color-text-secondary);
 }
 
 /* Размеры тега */
 .tag--s .tag-marker {
-    width: var(--fui-badge-size-s);
-    height: var(--fui-badge-size-s);
+  width: var(--fui-badge-size-s);
+  height: var(--fui-badge-size-s);
 }
 
 .tag--s .tag-label {
-    font-size: var(--font-size-m);
-    line-height: var(--font-size-m);
+  font-size: var(--font-size-m);
+  line-height: var(--font-size-m);
 }
 
 .tag--m .tag-marker {
-    width: var(--fui-badge-size-m);
-    height: var(--fui-badge-size-m);
+  width: var(--fui-badge-size-m);
+  height: var(--fui-badge-size-m);
 }
 
 .tag--m .tag-label {
-    font-size: var(--font-size-m);
-    line-height: var(--font-size-m);
+  font-size: var(--font-size-m);
+  line-height: var(--font-size-m);
 }
 
 .tag--l .tag-marker {
-    width: var(--fui-badge-size-l);
-    height: var(--fui-badge-size-l);
+  width: var(--fui-badge-size-l);
+  height: var(--fui-badge-size-l);
 }
 
 .tag--l .tag-label {
-    font-size: var(--font-size-l);
-    line-height: var(--font-size-l);
+  font-size: var(--font-size-l);
+  line-height: var(--font-size-l);
 }
 
 /* Цвета маркера */
 .tag--green .tag-marker {
-    background-color: var(--fui-green-palette-700);
+  background-color: var(--fui-green-palette-700);
 }
 
 .tag--red .tag-marker {
-    background-color: var(--fui-red-palette-700);
+  background-color: var(--fui-red-palette-700);
 }
 
 .tag--orange .tag-marker {
-    background-color: var(--fui-orange-palette-700);
+  background-color: var(--fui-orange-palette-700);
 }
 
 .tag--violet .tag-marker {
-    background-color: var(--fui-violet-palette-700);
+  background-color: var(--fui-violet-palette-700);
 }
 
 .tag--blue .tag-marker {
-    background-color: var(--fui-blue-palette-700);
+  background-color: var(--fui-blue-palette-700);
 }
 
 .tag--yellow-green .tag-marker {
-    background-color: var(--fui-yellow-green-palette-700);
+  background-color: var(--fui-yellow-green-palette-700);
 }
-
